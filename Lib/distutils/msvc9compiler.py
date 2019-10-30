@@ -247,6 +247,9 @@ def find_vcvarsall(version):
     vcvarsall = os.path.join(productdir, "vcvarsall.bat")
     if os.path.isfile(vcvarsall):
         return vcvarsall
+    vcvarsall = os.path.join(productdir, 'Auxiliary\\Build\\vcvarsall.bat')
+    if os.path.isfile(vcvarsall):
+        return vcvarsall
     log.debug("Unable to find vcvarsall.bat")
     return None
 
